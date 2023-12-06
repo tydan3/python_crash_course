@@ -150,3 +150,8 @@ print(sliced)
 s = "reverse me"
 sliced = s[::-1]
 print(sliced)
+my_tuple = (1, 2, 3, 4, 5, 6, 7, 8, 9)
+sliced = my_tuple[2:] # Slicing from index 2 to the end
+print(sliced) # (3, 4, 5, 6, 7, 8, 9)
+# SETS
+
