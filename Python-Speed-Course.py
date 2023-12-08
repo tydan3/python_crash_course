@@ -187,3 +187,23 @@ x = {x:'value' for x in range(5)}
 print(x)
 x = tuple(i for i in range(25) if i % 5 == 0)
 print(x)
+# FUNCTIONS
+print('FUNCTIONS')
+def func(x, y, z=None):
+  print('run', x, y, z)
+  def inner_func():
+    print('hi')
+  inner_func()
+  return x * y, x / y # returns tuple
+r1, r2 = func(5, 6)
+print(r1, r2)
+# ADV Example of functions: UNPACK
+print('ADV Example')
+def func(x):
+  def func2():
+    print(x)
+  return func2
+x = func(3)
+x()
+# *args, **kwargs
+print('*args, **kwargs')
