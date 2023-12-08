@@ -17,7 +17,7 @@
 True
 False
 # OUTPUT AND PRINTING
-print('OUTPUT AND PRINTING')
+print('$OUTPUT AND PRINTING')
 print(4.5)
 print("hello", end='|') # end= argument sets the end of the print statement to given value
 print(4.5, "hello", False, 'end') # comma-seperated values prints with a space in between
@@ -26,7 +26,7 @@ print(4.5, "hello", False, 'end') # comma-seperated values prints with a space i
 #   no special characters except _
 #   cannot start with number
 #   use snake_case for multiword names
-print("VARIABLES")
+print("$VARIABLES")
 hello = 'dan'
 world = "world"
 world = hello
@@ -34,14 +34,14 @@ hello = 'no'
 print(hello, world)
 # USER INPUT
 # prompt arg must be a string
-print('USER INPUT')
+print('$USER INPUT')
 # name = input('Name: ')
 # print(name)
 # age = input('Age: ')
 # print('Hello', name, 'you are', age, 'years old.')
 # ARITHMETIC OPERATORS
 # Division always returns a float
-print('ARITHMETIC OPERATORS')
+print('$ARITHMETIC OPERATORS')
 x = 9
 y = 3
 result = x / y
@@ -55,7 +55,7 @@ print('x % y =', result) # mod
 # num = input('Number: ')
 # print(float(num) - 5) # float and int operands will result in a float result
 # STRING METHODS
-print('STRING METHODS')
+print('$STRING METHODS')
 hello = 'hElLo WorLD'
 print(type(hello)) # type() returns type of given the argument, String in this case
 print(hello.upper())
@@ -69,7 +69,7 @@ y = 'world'
 print(x + y) # concatenation
 # CONDITIONAL OPERATORS: ==, !=, <=, >=, <, >
 # chain operators (in priority order): not, and, or
-print('CONDITIONAL OPERATORS')
+print('$CONDITIONAL OPERATORS')
 x = "hello"
 y = 'hello'
 print(x == y) # double and single quotes are equivalent
@@ -91,7 +91,7 @@ print(not(result1 or result2))
 #   print('This is else')
 # print('Always print this')
 # COLLECTIONS: List
-print('COLLECTIONS: List/Tuples')
+print('$COLLECTIONS: List/Tuples')
 x = [4, True, 'hi'] # list can store different elements and is ordered
 print(x)
 print(len(x)) # length of list. len() also works on strings
@@ -114,7 +114,7 @@ print(x, y)
 x = (0, 0 ,2 ,2)
 print(x)
 # FOR LOOPS
-print('FOR LOOPS')
+print('$FOR LOOPS')
 for i in range(5, 0, -1): # start, stop, step
   print(i)
 print('---')
@@ -128,7 +128,7 @@ print('---')
 for i, element in enumerate(x):
   print(i, element)
 # WHILE LOOPS
-print('WHILE LOOPS')
+print('$WHILE LOOPS')
 i = 0
 j = 3
 print('i =', i, 'j = ', j)
@@ -143,7 +143,7 @@ while i < 3:
   print('i =', i, 'j = ', j)
 # SLICE OPERATOR: takes a slice of a collection
 # sliced = list[start:stop:step], list[:stop], list[start:], list[start:stop]
-print('SLICED OPERATOR')
+print('$SLICED OPERATOR')
 x = [0,1,2,3,4,5]
 sliced = x[5:2:-1]
 print(sliced)
@@ -154,7 +154,7 @@ my_tuple = (1, 2, 3, 4, 5, 6, 7, 8, 9)
 sliced = my_tuple[2:] # Slicing from index 2 to the end
 print(sliced) # (3, 4, 5, 6, 7, 8, 9)
 # SETS
-print('SETS')
+print('$SETS')
 print(type({})) # dict
 s = {4, 32, 2, 2} # set literal
 s2 = set()
@@ -167,7 +167,7 @@ print(s.union(s2)) # set s + set s2
 print(s.difference(s2)) # set s - set s2
 print(s.intersection(s2))
 # DICTIONARY: key value pair
-print('DICTIONARY')
+print('$DICTIONARY')
 d = {'key': 4}
 d['key2'] = 5
 d[3] = [2,2,1,1]
@@ -180,7 +180,7 @@ print(3 in d)
 for key, value in d.items():
   print(key, value)
 # COMPREHENSIONS
-print('COMPREHENSIONS')
+print('$COMPREHENSIONS')
 x = [x for x in range(5)]
 print(x)
 x = {x:'value' for x in range(5)} 
@@ -188,7 +188,7 @@ print(x)
 x = tuple(i for i in range(25) if i % 5 == 0)
 print(x)
 # FUNCTIONS
-print('FUNCTIONS')
+print('$FUNCTIONS')
 def func(x, y, z=None):
   print('run', x, y, z)
   def inner_func():
@@ -198,12 +198,28 @@ def func(x, y, z=None):
 r1, r2 = func(5, 6)
 print(r1, r2)
 # ADV Example of functions: UNPACK
-print('ADV Example')
+print('$ADV Example')
 def func(x):
   def func2():
     print(x)
   return func2
 x = func(3)
 x()
+# UNPACK OPERATOR
+print('$UNPACK OPERATOR')
+x = [1, 2, 3]
+print(x)
+print(*x) # UNPACK operator, seperates all elements in a list/collection into individual elements
+print('unpack list/collection and pass as args')
+def func(x, y):
+  print(x, y)
+pairs = [(1, 2), (3, 4)]
+for pair in pairs:
+  func(*pair) # * for tuple/list
+func(**{'x': 2, 'y':5}) # ** for dictionary
 # *args, **kwargs
-print('*args, **kwargs')
+# kwargs stands for key word arguments
+print('$*args, **kwargs')
+def func(*args, **kwargs): # pass any number of postional arguments and/or key word arguments
+  print(args, kwargs)
+func(1, 2, 3, 4, one= 1, two= 2)
