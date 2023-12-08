@@ -154,4 +154,36 @@ my_tuple = (1, 2, 3, 4, 5, 6, 7, 8, 9)
 sliced = my_tuple[2:] # Slicing from index 2 to the end
 print(sliced) # (3, 4, 5, 6, 7, 8, 9)
 # SETS
-
+print('SETS')
+print(type({})) # dict
+s = {4, 32, 2, 2} # set literal
+s2 = set()
+s2.add(4)
+s2.add(6)
+print(s2)
+s.remove(32)
+print(32 in s)
+print(s.union(s2)) # set s + set s2
+print(s.difference(s2)) # set s - set s2
+print(s.intersection(s2))
+# DICTIONARY: key value pair
+print('DICTIONARY')
+d = {'key': 4}
+d['key2'] = 5
+d[3] = [2,2,1,1]
+print(d)
+print('key' in d)
+print(list(d.values()))
+print(list(d.keys()))
+del d[3]
+print(3 in d)
+for key, value in d.items():
+  print(key, value)
+# COMPREHENSIONS
+print('COMPREHENSIONS')
+x = [x for x in range(5)]
+print(x)
+x = {x:'value' for x in range(5)} 
+print(x)
+x = tuple(i for i in range(25) if i % 5 == 0)
+print(x)
