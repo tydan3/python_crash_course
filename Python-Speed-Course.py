@@ -218,8 +218,40 @@ for pair in pairs:
   func(*pair) # * for tuple/list
 func(**{'x': 2, 'y':5}) # ** for dictionary
 # *args, **kwargs
+# args for positional arguments
 # kwargs stands for key word arguments
 print('$*args, **kwargs')
 def func(*args, **kwargs): # pass any number of postional arguments and/or key word arguments
   print(args, kwargs)
-func(1, 2, 3, 4, one= 1, two= 2)
+func(1, 2, 3, 4, one=1, two=2)
+# EXCEPTIONS
+# raise Exception('bad')
+# raise FileExistsError
+# HANDLE EXCEPTIONS
+try:
+  x = 7 / 0
+except Exception as e:
+  print(e)
+finally:
+  print('finally')
+# LAMBDAS
+# one-line anonymous function
+print('LAMBDAS')
+x = lambda x, y: x + y
+print(x(2, 32))
+# MAP AND FILTER
+print('MAP AND FILTER')
+x = [614,12,2,3,5,6,21,2,35,9,14,2]
+mp = map(lambda i: i + 2, x) # Adds 2 to every element
+print(list(mp))
+mp = filter(lambda i: i % 2 == 0, x) # Filters out even elements
+# def func(i):
+#   return i % 2 == 0
+# mp = filter(func, x) # same output as filter with lambda
+print(list(mp))
+# F STRINGS
+print('F STRINGS')
+num = 60
+x = f'hello {6 + 8} {num}'
+print(x)
+print(f'goodbye {num}')
